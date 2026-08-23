@@ -1,11 +1,10 @@
 const sumAll = function(begin, end) {
     let buff = 0;
     
-    if (isNaN(parseInt(begin)) || isNaN(parseInt(end))) return 'ERROR'; 
-    if (begin < 0 || end < 0) return 'ERROR'; 
     
+    if (!Number.isInteger(begin) || !Number.isInteger(end) || begin < 0 || end < 0) return 'ERROR'; 
     
-    for (i = begin; begin < end++; i++) {
+    for (i = Math.min(begin,end); i < Math.max(begin,end)+1; i++) {
         buff += i; 
     }
 
